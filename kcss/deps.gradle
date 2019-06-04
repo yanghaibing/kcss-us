@@ -1,0 +1,30 @@
+project(':kcss-biz') {
+    dependencies {
+        compile project(':kcss-core')
+    }
+}
+
+project(':kcss-admin') {
+    dependencies {
+        compile project(':kcss-core')
+        compile project(':kcss-biz')
+    }
+}
+
+project(':kcss-rest') {
+    dependencies {
+        compile project(':kcss-core')
+        compile project(':kcss-biz')
+    }
+}
+project(':kcss-job') {
+    dependencies {
+        compile project(':kcss-core')
+        compile project(':kcss-biz')
+    }
+}
+project(':kcss-harvester') {
+
+}
+
+

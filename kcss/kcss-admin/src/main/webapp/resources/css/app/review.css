@@ -1,0 +1,101 @@
+input:disabled {
+    border: 0 solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+dt span, dd span {
+    border:0 solid #FFFFFF !important;
+}
+
+th {
+    text-align: center
+}
+
+#harvestContactTab td {
+    text-align: left;
+}
+
+#harvestSmsTab td {
+    text-align: left;
+}
+
+.highlight {
+    background-color: #F00;
+    font-weight: 800;
+}
+
+.highlight2 {
+    background-color: #00F;
+    font-weight: 800;
+}
+
+.highlight3 {
+    background-color: #c37e00;
+    font-weight: 800;
+}
+
+
+#facehistoryTab table tr td {
+    vertical-align: middle;
+}
+
+.btn-edit-customer-info, .btn-modify-customer-info {
+    padding-left: 0;
+    margin-left: -10px;
+}
+.myheight {
+    height: 44px;
+    width: 44px;
+    display:inline;
+}
+.highlightLoan {
+    color: #FFCC39;
+}
+
+.highlightLoan>td {
+    color: #FFCC39!important;
+}
+.highlightBank {
+    color: #54bfa3 !important;
+}
+/*#customerGender:disabled,*/
+/*#customerPlatform:disabled,*/
+/*#customerStatus:disabled,*/
+/*#customerName:disabled,*/
+/*#customerIdNumber:disabled,*/
+/*#customerMobile:disabled {*/
+    /*border: 0 solid #FFFFFF;*/
+    /*background-color: #FFFFFF;*/
+/*}*/
+
+/*#customerInfoTab li {*/
+    /*width:10%;*/
+/*}*/
+
+.role-modal-dialog {
+    width: 900px;
+}
+
+.select-all-privilege-wrap {
+    display: inline-block;
+    margin: 0 10px 0 60px;
+}
+
+.select-all-privilege-checkbox {
+    margin-right: 10px!important;
+}
+
+.checkbox-label {
+    display: inline-block;
+    width: calc(33% - 40px);
+    margin: 6px 0 0 20px;
+}
+
+.privilege-explain {
+    background-color: aliceblue;
+    width: fit-content;
+}
+
+.alert {
+    z-index: 9999;
+}

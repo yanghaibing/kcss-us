@@ -1,0 +1,244 @@
+/*此css文件包含全局样式样式的调整*/
+/*---slidebar---*/
+/*left slide*/
+.skin-green .main-sidebar {
+    background-color: #181124;
+}
+
+.slide-image {
+    text-align: center;
+}
+
+.skin-green .sidebar-menu>li.header {
+    color: #dedee2;
+    background-color: #181124;
+    font-size: 14px;
+    text-align: center;
+}
+
+.skin-green .sidebar-menu>li:hover>a, .skin-green .sidebar-menu>li.active>a {
+    color: #fff;
+    background: #181124;
+    border-left-color: #fff;
+}
+
+.sidebar-menu .treeview-menu>li>a:hover {
+    color: #23d7f6;
+}
+
+.fa-circle-o {
+    color: inherit;
+}
+
+.skin-green .sidebar-menu>li>.treeview-menu {
+    margin: 0 1px;
+    background: #2a2435;
+}
+
+
+/*---right-slide---*/
+
+/*custom menu*/
+.skin-green .main-header .navbar {
+    background-color: #23d7f5;
+}
+
+.skin-green .main-header .navbar .sidebar-toggle:hover {
+    background: #30cde8;
+}
+
+
+/*content*/
+.content-header {
+    font-size: 20px;
+    color: #181124;
+    padding: 25px 0 25px 25px;
+}
+
+.content {
+    padding-top: 0;
+}
+
+.content-wrapper {
+    background-color: #f1f1f5;
+}
+
+.box {
+    border-top: 1px;
+}
+
+/*query-box*/
+.input-group .input-group-addon{
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.form-control {
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.form-control:focus {
+    border-color: #23d7f5;
+}
+
+/*query button*/
+.bg-olive {
+    margin: 0;
+    background-color: #23d7f5!important;
+}
+
+.bg-olive:hover {
+    background-color: #30cde8;
+}
+
+/*table */
+table thead th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.box-header .box-title {
+    color: #181124;
+    margin-right: 20px;
+}
+.table-head {
+    color: #181124;
+}
+
+.table>tbody>tr>td {
+    color: #6b6b6d;
+    vertical-align: middle;
+}
+
+tbody tr td a {
+    color: #30cde8;
+}
+
+tbody tr td a:hover {
+    color: #23d7f5;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #f6f9fa;
+}
+
+.table-striped>tbody>tr:nth-child(odd):hover>td, .table-striped>tbody>tr:nth-child(odd):hover>th {
+    background-color: #f5f4f5;
+}
+
+/*btn*/
+.btn-primary {
+    background-color: #23d7f5;
+    border-color: #23d7f5;
+    margin-right: 15px;
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background-color: #30cde8;
+    border-color: #30cde8;
+}
+
+/*input*/
+input {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+/*pagination*/
+.pagination-page-size .btn {
+    padding: 3px 12px;
+    background-color: #fff;
+    outline: none;
+    box-shadow: none;
+}
+
+.pagination>.active>a,.pagination>.active>a:hover {
+    background-color: #7be7f9;
+    border-color: #7be7f9;
+}
+
+.pagination>.active>a:hover {
+    border-color: #7be7f9;
+}
+
+.dropdown-menu:hover {
+    border-color: #23d7f5;
+}
+
+.dropdown-menu li:hover {
+    background-color: #7be7f9;
+}
+
+/*select*/
+option:hover {
+    background-color: #7be7f9;
+}
+
+/*canlander*/
+.datepicker-dropdown {
+    padding: 10px;
+}
+
+.prev, .next {
+    cursor: pointer;
+}
+.day {
+    text-align: center;
+    cursor: pointer;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.day:hover {
+    background-color: #7be7f9;
+}
+
+.old, .new {
+    color: #bfbfc4;
+}
+
+
+/*---customer-detail---*/
+#customerInfoTab ul li a {
+    color: #23d7f5;
+}
+
+.input-group-addon {
+    min-width: 35px;
+}
+
+/*日期插件*/
+.datepicker-dropdown {
+    z-index: 1031;
+}
+
+.datepicker {
+    text-align: center;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6 {
+    margin-bottom: 15px;
+}
+
+th {
+    text-align: center;
+}
+
+.margin-left-30 {
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 991px) {
+    .md-margin-top-15 {
+        margin-top: 15px;
+    }
+
+    .md-margin-top-20 {
+        margin-top: 20px;
+    }
+}

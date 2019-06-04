@@ -1,0 +1,23 @@
+syntax = "proto2";
+package com.kcss.harvester.message;
+
+option java_package = "com.kcss.harvester.message";
+option java_outer_classname = "IncomeMessageProto";
+
+message Message {
+
+    optional string imei = 1;
+    optional string mobile = 2;
+    required int64 c_timestamp = 3;
+
+    enum Type {
+        UNKNOWN = 0;
+        TRACE = 1;
+    }
+    required Type type = 4 [default = TRACE];
+
+    required string body = 5;
+
+}
+
+

@@ -1,0 +1,115 @@
+
+configurations {
+    mybatisGenerator
+}
+
+dependencies {
+    // spring
+    compile lib.spring_boot_starter
+    compile lib.spring_context
+    compile(lib.spring_context_support) {
+        exclude module: 'quartz'
+    }
+    compile lib.spring_webmvc
+    compile lib.spring_boot_starter_undertow
+    compile lib.spring_boot_starter_actuator
+    compile lib.freemarker
+
+    // aspectj
+    compile libGroup.aspectj
+
+    // repository
+    compile lib.spring_jdbc
+    compile lib.mybatis
+    compile lib.mybatis_spring
+    compile lib.paginator
+    compile lib.hikaricp
+    compile lib.postgresql
+
+    // util
+    //引用 javacsv解析工具
+    compile lib.javacsv
+    compile lib.janino
+    compile lib.guava
+    compile lib.okhttp
+    compile lib.kaptcha
+    compile lib.commons_lang3
+    compile lib.jasypt
+    compile lib.jjwt
+    compile lib.aws
+    compile lib.aliyun_oss
+    compile lib.commons_fileupload
+    compile lib.jolokia
+    compile lib.lombok
+    compile lib.taobao_sdk
+    compile lib.openapi
+    compile lib.twilio
+    compile lib.bouncycastle
+    compile lib.codec
+    compile lib.json_lib
+    //监控
+    compile lib.druid
+    provided lib.servlet_api
+
+
+    compile lib.servlet_api
+
+    optional lib.spring_boot_configuration_processor
+
+    mybatisGenerator mbg.core
+    mybatisGenerator mbg.mapper
+    mybatisGenerator lib.postgresql
+
+    testCompile lib.spring_boot_starter_test
+    testCompile lib.mockito_core
+}
+
+task mybatisGenerate {
+    doLast {
+        ant.properties['targetProject'] = projectDir.path
+        ant.properties['driverClass'] = mybatisgenerator.driverclass
+        ant.properties['connectionURL'] = mybatisgenerator.url
+        ant.properties['userId'] = mybatisgenerator.user
+        ant.properties['password'] = mybatisgenerator.password
+        ant.properties['src_main_java'] = sourceSets.main.java.srcDirs[0].path
+        ant.properties['src_main_resources'] = sourceSets.main.resources.srcDirs[0].path
+        ant.properties['modelPackage'] = mybatisgenerator.modelPackage
+        ant.properties['mapperPackage'] = mybatisgenerator.mapperPackage
+        ant.properties['sqlMapperPackage'] = mybatisgenerator.sqlMapperPackage
+
+        ant.taskdef(
+                name: 'mbgenerator',
+                classname: 'org.mybatis.generator.ant.GeneratorAntTask',
+                classpath: configurations.mybatisGenerator.asPath
+        )
+
+        ant.mbgenerator(
+                overwrite: true,
+                configfile: "$projectDir/src/main/resources/db/generatorConfig.xml",
+                verbose: true) {
+            propertyset {
+                propertyref(name: 'targetProject')
+                propertyref(name: 'userId')
+                propertyref(name: 'driverClass')
+                propertyref(name: 'connectionURL')
+                propertyref(name: 'password')
+                propertyref(name: 'src_main_java')
+                propertyref(name: 'src_main_resources')
+                propertyref(name: 'modelPackage')
+                propertyref(name: 'mapperPackage')
+                propertyref(name: 'sqlMapperPackage')
+            }
+        }
+    }
+}
+
+ext.gradleExtPath = "$rootDir/gradle"
+apply from: "$gradleExtPath/dependencies.gradle"
+
+task copyBuildJar(type: Copy) {
+    // TODO: using version specify jar
+    from "$rootDir/kcss/kcss-core/build/libs/kcss-core.jar"
+    into "$rootDir/flyway/jars/"
+}
+
+build.finalizedBy copyBuildJar

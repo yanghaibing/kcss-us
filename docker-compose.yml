@@ -1,0 +1,40 @@
+version: "2"
+services:
+  kcss-rest:
+    image: custom-jre
+    container_name: kcss-rest
+    ports:
+    - "8888:8888"
+    command: java -Xmx1024m -Duser.timezone=Asia/Jakarta -DLOG_PATH=/docker/log -DCONFIG_HOME=/docker/conf -jar /docker/lib/kcss-rest.war --spring.config.location=/docker/conf/application.properties
+    volumes:
+    - /home/ubuntu/docker-data/rest/conf:/docker/conf
+    - /home/ubuntu/docker-data/rest/lib:/docker/lib
+    - /home/ubuntu/docker-data/rest/log:/docker/log
+  kcss-admin:
+    image: custom-jre
+    container_name: kcss-admin
+    ports:
+    - "8889:8889"
+    command: java -Xmx2048m -Duser.timezone=Asia/Jakarta -DLOG_PATH=/docker/log -DCONFIG_HOME=/docker/conf -jar /docker/lib/kcss-admin.war --spring.config.location=/docker/conf/application.properties
+    volumes:
+    - /home/ubuntu/docker-data/admin/conf:/docker/conf
+    - /home/ubuntu/docker-data/admin/lib:/docker/lib
+    - /home/ubuntu/docker-data/admin/log:/docker/log
+  kcss-job:
+    image: custom-jre
+    container_name: kcss-job
+    command: java -Xmx2048m -Duser.timezone=Asia/Jakarta -DLOG_PATH=/docker/log -DCONFIG_HOME=/docker/conf -jar /docker/lib/kcss-job.war --spring.config.location=/docker/conf/application.properties
+    volumes:
+    - /home/ubuntu/docker-data/job/conf:/docker/conf
+    - /home/ubuntu/docker-data/job/lib:/docker/lib
+    - /home/ubuntu/docker-data/job/log:/docker/log
+  kcss-harvester:
+    image: custom-jre
+    container_name: kcss-harvester
+    ports:
+    - "9696:8090"
+    command: java -Xmx1024m -Duser.timezone=Asia/Jakarta -DLOG_PATH=/docker/log -DCONFIG_HOME=/docker/conf -jar /docker/lib/kcss-harvester.jar --spring.config.location=/docker/conf/application.properties
+    volumes:
+    - /home/ubuntu/docker-data/harvester/conf:/docker/conf
+    - /home/ubuntu/docker-data/harvester/lib:/docker/lib
+    - /home/ubuntu/docker-data/harvester/log:/docker/log

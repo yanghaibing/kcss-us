@@ -1,0 +1,9 @@
+include 'kcss-admin'
+include 'kcss-biz'
+include 'kcss-core'
+include 'kcss-rest'
+include 'kcss-harvester'
+include 'kcss-job'
+include 'kcss-monitor'
+
+rootProject.name = 'kcss'

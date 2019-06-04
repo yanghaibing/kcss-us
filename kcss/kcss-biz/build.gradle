@@ -1,0 +1,15 @@
+dependencies {
+    compile group: 'com.aliyun', name: 'aliyun-java-sdk-push', version: '3.1.0'
+    compile lib.retrofit2
+    compile lib.retrofit2_converter_jackson
+    compile lib.poi
+    compile lib.poi_ooxml
+    compile lib.spring_boot_starter_validation
+    compile libGroup.swagger
+    testCompile lib.spring_boot_starter_test
+    testCompile lib.mockito_core
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-Xlint:unchecked'
+}

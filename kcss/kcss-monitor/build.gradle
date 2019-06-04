@@ -1,0 +1,16 @@
+dependencies {
+    compile lib.spring_context
+    compile lib.spring_context_support
+    compile lib.spring_core
+    compile lib.spring_web
+    compile lib.okhttp
+    compile lib.spring_boot_starter
+    compile lib.spring_boot_starter_logging
+    compile lib.jackson_databind
+
+    compile libGroup.aspectj
+    compile libGroup.stagemonitor
+    compile lib.stagemonitor_os,{ exclude group: 'log4j', module: 'log4j' }
+
+    testCompile lib.spring_boot_starter_test
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+    <ReportInfo id="loan-issue" region="DEFAULT">
+        <SQL>
+            <![CDATA[
+                select loan.id,loanIssue.id as issue_id,customer.mobile,pi.full_name,loanIssue.update_time as issue_time,loan.amount,loan.loan_type,loan.period,loan.period_unit,loan.status,round(loan.amount*loan.period*1.0/365,2) as issue_annualize
+                from t_loan_app loan
+                  join t_loan_issue loanIssue on loanIssue.loan_app_id = loan.id and loanIssue.status='SUCCEED'
+                  left join t_customer customer on customer.id = loan.customer_id
+                  left join t_personal_info pi on pi.loan_app_id = loan.id
+                where 1=1
+                      and (#{loanAppId} is null or loan.id=#{loanAppId})
+                      and (#{loanAppStatus} is null or loan.status=#{loanAppStatus})
+                      and (#{issueStartDate} is null or loanIssue.create_time >= #{issueStartDate})
+                      and (#{issueEndDate} is null or loanIssue.create_time < #{issueEndDate})
+                      and (#{mobile} is null or customer.mobile=#{mobile})
+                      and (#{loanType} is null or loan.loan_type=#{loanType})
+                order by loanIssue.create_time desc
+			]]>
+        </SQL>
+        <Header>
+            <Column>
+                <name>loanApp id</name>
+                <type>java.lang.Long</type>
+            </Column>
+            <Column>
+                <name>issue id</name>
+                <type>java.lang.Long</type>
+            </Column>
+            <Column>
+                <name>customer mobile</name>
+                <type>java.lang.String</type>
+            </Column>
+            <Column>
+                <name>customer name</name>
+                <type>java.lang.String</type>
+            </Column>
+            <Column>
+                <name>issue time</name>
+                <type>java.util.Date</type>
+            </Column>
+            <Column>
+                <name>amount</name>
+                <type>java.math.BigDecimal</type>
+            </Column>
+            <Column>
+                <name>loan type</name>
+                <type>com.kcss.biz.loanapp.entity.LoanAppEntity$LoanType</type>
+            </Column>
+            <Column>
+                <name>apply duration</name>
+                <type>java.lang.Integer</type>
+            </Column>
+            <Column>
+                <name>apply duration unit</name>
+                <type>com.kcss.biz.loanapp.entity.LoanAppEntity$PeriodUnit</type>
+            </Column>
+            <Column>
+                <name>loanApp current status</name>
+                <type>com.kcss.biz.loanapp.entity.LoanAppEntity$LoanAppStatus</type>
+            </Column>
+            <Column>
+                <name>issue annualize</name>
+                <type>java.math.BigDecimal</type>
+            </Column>
+        </Header>
+    </ReportInfo>
+</ROOT>

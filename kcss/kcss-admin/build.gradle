@@ -1,0 +1,14 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+dependencies {
+    compile(lib.spring_boot_starter_web) {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    compile lib.spring_boot_starter_undertow
+}
+

@@ -1,0 +1,118 @@
+.login-page {
+    position: relative;
+    background-color: #141a48;
+    overflow: hidden;
+}
+
+.login-box {
+    width: 500px;
+    position: absolute;
+    left: calc(50% - 250px);
+    z-index: 1;
+}
+
+.login-logo a {
+    color: #fff;
+}
+
+.answer {
+    width: 254px;
+}
+
+.input-group .input-group-addon {
+    min-width: 50px;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.fa-lock:before, .fa-mobile:before {
+    font-size: 24px;
+}
+
+.login-box-msg {
+    font-size: 18px;
+}
+
+.captcha-image {
+    height: 50px;
+}
+
+.captcha-btn {
+    background-color: #23d7f5;
+    width: 34px;
+    margin: 0;
+    padding: 4px 0;
+}
+
+/*update*/
+#canvasContainer {
+    position: relative;
+    top: 200px;
+}
+
+.login-box-body {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    -webkit-transition-delay: 99999s;
+    -webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
+     -webkit-box-shadow: 0 0 0 1000px white inset;
+    border-color: #dedee2;
+    border-radius: 4px;
+}
+
+.login-box-msg {
+    color: #bfbfc4;
+}
+
+.form-control {
+    border-color: #dedee2;
+    font-size: 18px;
+    border-radius: 4px;
+    height: 50px;
+}
+
+.input-group input:focus, .form-group input:focus  {
+    border-color: #23d7f5;
+}
+
+.btn-primary {
+    font-size: 20px;
+    background-color: #23d7f5;
+    border-color: #23d7f5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background-color: #30cde8;
+    border-color: #30cde8;
+}
+
+.btn.btn-flat {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.captcha-btn {
+    height: 50px;
+    width: 50px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+
+@media  screen and (max-width: 767px) {
+    .login-box {
+        left: 5%;
+    }
+}

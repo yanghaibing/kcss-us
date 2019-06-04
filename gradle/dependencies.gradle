@@ -1,0 +1,163 @@
+ext {
+    ver = [
+            spring                      : '4.3.11.RELEASE',
+            spring_boot                 : '1.5.7.RELEASE',
+
+            aspectj                     : '1.8.10',
+
+            servlet                     : '3.1.0',
+
+            netty                       : '4.1.14.Final',
+
+            mybatis                     : '3.4.5',
+            mybatis_spring              : '1.3.1',
+            postgresql                  : '42.2.1',
+            hikaricp                    : '2.7.2',
+
+            freemarker                  : '2.3.23',
+
+            groovy                      : '2.4.10',
+            dependency_management_plugin: '1.0.3.RELEASE',
+            gradle_git                  : '1.7.2',
+            propdeps_plugin             : '0.0.7',
+
+            //新增csv解析jar
+            javacsv                     : '2.0',
+            //新增Excel解析jar
+            poi                         : '3.17',
+            poi_ooxml                   : '3.17',
+            janino                      : '3.0.7',
+            guava                       : '23.0',
+            okhttp                      : '3.9.0',
+            kaptcha                     : '0.0.9',
+            commons_lang3               : '3.5',
+            jasypt                      : '1.9.2',
+            jjwt                        : '0.7.0',
+            swagger                     : '2.6.0',
+            aws                         : '1.11.204',
+            commons_fileupload          : '1.3.3',
+            protobuf                    : '3.2.0',
+            jolokia                     : '1.3.7',
+            lombok                      : '1.16.18',
+            twilio                      : '7.14.5',
+            jackson                     : '2.8.10',
+            mockito_core                : '2.10.0',
+            bouncycastle                : '1.46',
+            codec                       : '1.10',
+            stagemonitor                : '0.84.0',
+            aliyun_oss                  : '3.1.0',
+            google_maps_services       : '0.2.6',
+            retrofit2                   : '2.1.0',
+            retrofit2_converter_jackson  : '2.1.0',
+            json_lib                    : '2.4',
+            //监控
+            druid                       : '1.1.10',
+            paginator                    : '1.2.17'
+    ]
+
+    lib = [
+            // spring
+            spring_context                     : "org.springframework:spring-context:$ver.spring",
+            spring_context_support             : "org.springframework:spring-context-support:$ver.spring",
+            spring_webmvc                      : "org.springframework:spring-webmvc:$ver.spring",
+            spring_core                        : "org.springframework:spring-core:$ver.spring",
+            spring_aop                         : "org.springframework:spring-aop:$ver.spring",
+            spring_web                         : "org.springframework:spring-web:$ver.spring",
+
+            // spring boot
+            spring_boot_starter                : "org.springframework.boot:spring-boot-starter:$ver.spring_boot",
+            spring_boot_starter_logging        : "org.springframework.boot:spring-boot-starter-logging:$ver.spring_boot",
+            spring_boot_starter_web            : "org.springframework.boot:spring-boot-starter-web:$ver.spring_boot",
+            spring_boot_starter_undertow       : "org.springframework.boot:spring-boot-starter-undertow:$ver.spring_boot",
+            spring_boot_starter_test           : "org.springframework.boot:spring-boot-starter-test:$ver.spring_boot",
+            spring_boot_starter_actuator       : "org.springframework.boot:spring-boot-starter-actuator:$ver.spring_boot",
+            spring_boot_configuration_processor: "org.springframework.boot:spring-boot-configuration-processor:$ver.spring_boot",
+            spring_boot_starter_validation     : "org.springframework.boot:spring-boot-starter-validation:$ver.spring_boot",
+
+            // template engine
+            freemarker                         : "org.freemarker:freemarker:$ver.freemarker",
+
+            // gradle plugin
+            spring_boot_gradle_plugin          : "org.springframework.boot:spring-boot-gradle-plugin:$ver.spring_boot",
+            dependency_management_plugin       : "io.spring.gradle:dependency-management-plugin:$ver.dependency_management_plugin",
+            gradle_git                         : "org.ajoberstar:gradle-git:$ver.gradle_git",
+            propdeps_plugin                    : "org.springframework.build.gradle:propdeps-plugin:$ver.propdeps_plugin",
+
+            // aspectj
+            aspectjrt                          : "org.aspectj:aspectjrt:$ver.aspectj",
+            aspectjweaver                      : "org.aspectj:aspectjweaver:$ver.aspectj",
+
+            // servlet
+            servlet_api                        : "javax.servlet:javax.servlet-api:$ver.servlet",
+
+            // netty
+            netty                              : "io.netty:netty-all:$ver.netty",
+
+            // orm
+            spring_jdbc                        : "org.springframework:spring-jdbc:$ver.spring",
+            mybatis                            : "org.mybatis:mybatis:$ver.mybatis",
+            mybatis_spring                     : "org.mybatis:mybatis-spring:$ver.mybatis_spring",
+            paginator                          : "com.github.miemiedev:mybatis-paginator:$ver.paginator",
+            openapi                            : [name: "advance-openapi-sdk-1.0.0"],
+            hikaricp                           : "com.zaxxer:HikariCP:$ver.hikaricp",
+            postgresql                         : "org.postgresql:postgresql:$ver.postgresql",
+
+            // utils
+            javacsv                            : "net.sourceforge.javacsv:javacsv:$ver.javacsv",
+            poi                                : "org.apache.poi:poi:$ver.poi",
+            poi_ooxml                          : "org.apache.poi:poi-ooxml:$ver.poi_ooxml",
+            janino                             : "org.codehaus.janino:janino:$ver.janino",
+            guava                              : "com.google.guava:guava:$ver.guava",
+            okhttp                             : "com.squareup.okhttp3:okhttp:$ver.okhttp",
+            kaptcha                            : "com.github.axet:kaptcha:$ver.kaptcha",
+            commons_lang3                      : "org.apache.commons:commons-lang3:$ver.commons_lang3",
+            jasypt                             : "org.jasypt:jasypt:$ver.jasypt",
+            jjwt                               : "io.jsonwebtoken:jjwt:$ver.jjwt",
+            aws                                : "com.amazonaws:aws-java-sdk-s3:$ver.aws",
+            aliyun_oss                         : "com.aliyun.oss:aliyun-sdk-oss:$ver.aliyun_oss",
+            commons_fileupload                 : "commons-fileupload:commons-fileupload:$ver.commons_fileupload",
+            protobuf                           : "com.google.protobuf:protobuf-java:$ver.protobuf",
+            jolokia                            : "org.jolokia:jolokia-core:$ver.jolokia",
+            lombok                             : "org.projectlombok:lombok:$ver.lombok",
+            taobao_sdk                         : [name: "taobao-sdk-java-20170331"],
+            twilio                             : "com.twilio.sdk:twilio:$ver.twilio",
+            jackson_databind                   : "com.fasterxml.jackson.core:jackson-databind:$ver.jackson",
+            jackson_annotations                : "com.fasterxml.jackson.core:jackson-annotations:$ver.jackson",
+            mockito_core                       : "org.mockito:mockito-core:$ver.mockito_core",
+
+            bouncycastle                       : "org.bouncycastle:bcprov-jdk16:$ver.bouncycastle",
+            codec                              : "commons-codec:commons-codec:$ver.codec",
+            stagemonitor_os                    : "org.stagemonitor:stagemonitor-os:$ver.stagemonitor",
+            google_maps_services               : "com.google.maps:google-maps-services:$ver.google_maps_services",
+            retrofit2                           : "com.squareup.retrofit2:retrofit:$ver.retrofit2",
+            retrofit2_converter_jackson      :"com.squareup.retrofit2:converter-jackson:$ver.retrofit2_converter_jackson",
+            json_lib                            :"net.sf.json-lib:json-lib:$ver.json_lib:jdk13",
+            //监控
+            druid                            :"com.alibaba:druid:$ver.druid",
+            //check
+    ]
+
+
+    libGroup = [
+            aspectj     : [
+                    "$lib.aspectjrt",
+                    "$lib.aspectjweaver"
+            ],
+            swagger     : [
+                    "io.springfox:springfox-swagger2:$ver.swagger",
+                    "io.springfox:springfox-swagger-ui:$ver.swagger",
+                    "io.springfox:springfox-bean-validators:$ver.swagger"
+            ],
+            stagemonitor: [
+                    "org.stagemonitor:stagemonitor-web-servlet:$ver.stagemonitor",
+                    "org.stagemonitor:stagemonitor-logging:$ver.stagemonitor",
+                    "org.stagemonitor:stagemonitor-alerting:$ver.stagemonitor",
+                    "org.stagemonitor:stagemonitor-tracing-elasticsearch:$ver.stagemonitor",
+            ]
+    ]
+
+    mbg = [
+            core  : 'org.mybatis.generator:mybatis-generator-core:1.3.5',
+            mapper: 'tk.mybatis:mapper:3.3.9'
+    ]
+}

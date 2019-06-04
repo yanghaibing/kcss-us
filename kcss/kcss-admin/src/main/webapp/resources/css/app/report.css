@@ -1,0 +1,8 @@
+#report-data-content {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#report-data-content .table-data td {
+    max-width: 400px;
+}
